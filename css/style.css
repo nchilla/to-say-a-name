@@ -1,0 +1,181 @@
+body{
+  background-color: #EFEFEF;
+}
+
+
+#content{
+  display:grid;
+  overflow:scroll;
+  /* pointer-events: none; */
+  padding-bottom:30vw;
+}
+
+
+#content>p{
+  margin-top:25vw;
+  width:550px;
+  margin-left:100px;
+  position:relative;
+}
+
+
+
+#in-c{
+  color:rgba(251,51,41,1);
+}
+
+.full{
+  width:100vw;
+  height:100vh;
+  position:relative;
+}
+
+.dist{
+  height:100px;
+  grid-column: 1 / 10;
+}
+
+.full h1{
+  position:absolute;
+  left:50px;
+  bottom:30px;
+  /* color:#3F3F3F; */
+  color:black;
+}
+
+
+#noise{
+  position:fixed;
+  top:0;
+  left:0;
+  pointer-events: none;
+  background-image: url("../noise.jpg");
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+}
+
+#circles{
+  position:fixed;
+  top:0;
+  left:0;
+  background-color: #EFEFEF;
+  /* padding-bottom: 20vh; */
+  box-sizing: border-box;
+  transition: filter 0.6s;
+}
+
+.circle{
+  --xoffset:0;
+  --yoffset:0;
+  --rotate:0deg;
+  --scale:1;
+  border-radius: 50%;
+  width:100px;
+  height:200px;
+  border:1px solid black;
+  background-color: rgba(0,253,86,0.78);
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%) translate(var(--xoffset),var(--yoffset)) rotate(var(--rotate)) scale(var(--scale),var(--scale));
+  transition:transform 0.3s, background-color 0.3s;
+}
+
+#a{
+  transition-delay:0.4s;
+  width:14%;
+  height:35%;
+  left:19%;
+  z-index:3;
+}
+#b{
+  transition-delay:0.3s;
+  width:19%;
+  height:65%;
+  left:29%;
+  z-index:2;
+}
+#c{
+  transition-delay:0.2s;
+  width:14%;
+  height:44%;
+  left:44%;
+  z-index:4;
+}
+#d{
+  transition-delay:0.1s;
+  width:7%;
+  height:55%;
+  left:55%;
+  z-index:7;
+}
+#e{
+  transition-delay:0s;
+  width:14%;
+  height:35%;
+  left:60%;
+  z-index:5;
+}
+
+#circles[data-correct="false"] .circle{
+  background-color:rgba(251,51,41,0.29);
+}
+
+#circles[data-poof="false"] .circle{
+  --scale:0;
+}
+
+#circles[data-correct="false"] #a{
+  --yoffset:5vh;
+}
+#circles[data-correct="false"] #b{
+  --yoffset:-10vh;
+}
+#circles[data-correct="false"] #c{
+  --yoffset:15vh;
+}
+#circles[data-correct="false"] #d{
+  --yoffset:-10vh;
+}
+#circles[data-correct="false"] #e{
+  --yoffset:5vh;
+}
+
+#lips{
+  transition:opacity 0.6s;
+  position:absolute;
+  right:2%;
+  top:50%;
+  width:20%;
+  transform:translateY(-50%);
+}
+#lips path{
+  stroke:1px;
+}
+
+@media(hover:hover){
+  .circle:hover{
+    /* transform:translateY(-50%) translate(100px,100px) rotate(20deg); */
+  }
+}
+
+
+
+h1{
+  font-family:"Violet Sans", sans-serif;
+  font-size: min(60px,7vw);
+}
+
+p{
+  font-family:"Times New Roman", serif;
+  font-size:23px;
+  line-height: 28px;
+}
+
+
+@font-face {
+   font-family: 'Violet Sans';
+   src: url('../fonts/VioletSans-Regular.woff') format('woff'),
+        url('../fonts/VioletSans-Regular.woff2') format('woff2');
+   font-weight: 400;
+   font-style: normal;
+}

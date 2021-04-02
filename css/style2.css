@@ -1,0 +1,41 @@
+.orb{
+  border-radius:50%;
+  /* background-color: grey; */
+  border:1px solid black;
+  margin-right: 1px;
+  position:relative;
+}
+.orb:nth-child(1){
+  width:10%;
+  height:60%;
+  top:var(--incr);
+}
+.orb:nth-child(2){
+  width:30%;
+  height:90%;
+  top:var(--nincr);
+}
+.orb:nth-child(3){
+  width:15%;
+  height:70%;
+  top:var(--incr);
+}
+.orb:nth-child(4){
+  width:30%;
+  height:80%;
+  top:var(--nincr);
+}
+.orb:nth-child(5){
+  width:15%;
+  height:60%;
+  top:var(--incr);
+}
+
+/* <div id="name-bar">
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <p>?</p>
+</div> */
